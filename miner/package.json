@@ -1,17 +1,21 @@
 {
-  "name": "signaling-server",
+  "name": "miner",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node server.js",
+    "start": "node backend.js",
+    "build": "watchify ./frontend-script.js -o ./public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "socket.io": "^4.5.2"
+    "socket.io": "^4.5.2",
+    "watchify": "^4.0.0"
   }
 }
