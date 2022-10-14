@@ -4,6 +4,7 @@ dotenv.config();
 const bodyParser = require('body-parser')
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs')
 const app = express();
 
 const server = require('http').Server(app)

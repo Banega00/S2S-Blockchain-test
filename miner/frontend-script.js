@@ -23,14 +23,14 @@ const MINING_REWARD = 50;
 var miningInProgress = false;
 
 let PEER_ID;
-// let SIGNALING_SERVER_URL = 'http://10.241.107.215:3000';
-let SIGNALING_SERVER_URL = 'http://192.168.1.10:3000';
+let SIGNALING_SERVER_URL = 'http://10.241.107.215:3000';
+// let SIGNALING_SERVER_URL = 'http://192.168.1.10:3000';
 let isSynchronized = false;
 
 const peers = {}
 const myPeer = new Peer(undefined, {
-    // host: '10.241.107.215',
-    host: '192.168.1.10',
+    host: '10.241.107.215',
+    // host: '192.168.1.10',
     port: '12345'
 })
 
@@ -736,7 +736,7 @@ function addTransactionToPage(transaction){
   `
     <div>
        <div>
-            <b>${transaction.id}</b> - ${new Date(transaction.input.timestamp).toISOString()}
+            <b>${transaction.id}</b> - ${new Date(transaction.input.timestamp).toLocaleString()}
             </div>
 
             <div>
@@ -744,10 +744,10 @@ function addTransactionToPage(transaction){
             </div>
 
             <div>
-                Total amount: ${Object.entries(transaction.outputMap).reduce((prevValue,[currKey,currValue])=>{
+                Total amount: <b>${Object.entries(transaction.outputMap).reduce((prevValue,[currKey,currValue])=>{
                   if(currKey == transaction.input.address) return prevValue;
                   return prevValue+currValue;
-              },0)}
+              },0)}</b>
             </div>
             <details>
                 <summary>
@@ -812,7 +812,7 @@ function addBlockToPage(block, index){
 
   blockDiv.innerHTML = `
     <div>
-      #${index} - ${new Date(block.timestamp)}
+      <b>#${index}</b> - ${new Date(block.timestamp).toLocaleString()}
       <hr>
       <details>
         <summary>
@@ -842,7 +842,7 @@ function addBlockToPage(block, index){
                   <div class="transaction">
                     <div>
                        <div>
-                            <b>${transaction.id}</b> - ${transaction.input.timestamp}
+                            <b>${transaction.id}</b> - ${new Date(transaction.input.timestamp).toLocaleString()}
                             </div>
 
                             <div>

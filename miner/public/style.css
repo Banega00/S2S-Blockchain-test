@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+}
+
+body{
+    display: flex;
+}
+
+body div{
+    flex: 1;
+    padding: 5px;
+    max-width: 33vw;
+}
+
+body hr{
+    border: none;
+    width: 4px;
+    background: black;
+}
+
+.block{
+    border: 1px solid black;
+    margin: 15px 5px;
+}
+
+.address{
+    word-wrap: break-word;
+}
+
+button{
+    padding: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.transaction{
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+
+h2{
+    color: rgb(12, 101, 164);
+}
